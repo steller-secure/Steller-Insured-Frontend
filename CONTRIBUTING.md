@@ -32,11 +32,11 @@ Run tests:
 npm run test
 
 ⚙️ Tech Stack
-Framework: Next.js / React
+Framework: Next.js
 
 Styling: Tailwind CSS
 
-State Management: Zustand / Context API
+State Management: The project uses React's built-in state management hooks, specifically useContext
 
 Wallets & Blockchain: StarkNet.js
 
