@@ -32,6 +32,19 @@ Shape the future of decentralized insurance
 🌉 Built on StarkNet
 StarkNet provides a scalable, secure, and low-cost environment for Stark Insured to thrive, making it ideal for handling complex decentralized insurance logic at scale.
 
+Folder Structure
+The project follows a standard Next.js folder structure:
+src/
+├── app/
+├── components/
+       ├── ui/
+├── hooks/
+│   ├── [custom hooks files]
+├── lib/
+├── pages/
+├── App.css
+├── index.css
+
 🛡️ Why Stark Insured?
 Trustless and censorship-resistant
 
