@@ -20,29 +20,17 @@ Commit Conventions
 🚀 Getting Started
 Fork the repository and clone your fork:
 
-bash
-Copy
-Edit
 git clone https://github.com/your-username/stark-insured-frontend.git
 cd stark-insured-frontend
 Install dependencies:
-
-bash
-Copy
-Edit
 npm install
+
 Run the development server:
-
-bash
-Copy
-Edit
 npm run dev
-Run tests:
 
-bash
-Copy
-Edit
+Run tests:
 npm run test
+
 ⚙️ Tech Stack
 Framework: Next.js / React
 
@@ -82,17 +70,11 @@ For blockchain interactions, use starknet-react hooks or services from /lib/star
 
 🔁 Pull Request Workflow
 Create a new branch:
-
-bash
-Copy
-Edit
 git checkout -b feat/your-feature-name
-Push your changes:
 
-bash
-Copy
-Edit
+Push your changes:
 git push origin feat/your-feature-name
+
 Open a PR to the main branch.
 
 Follow the PR template and:
