@@ -6,9 +6,9 @@ import InsuranceCategories from "../components/InsuranceCategories";
 export default function Home() {
   return (
     <div className="min-h-screen">
-       <Navbar />
+      <Navbar />
       <Hero />
       <InsuranceCategories />     
-      </div>
+    </div>
   );
 }
