@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
+import "@/src/styles/button.css";
 
 const Hero = () => {
   const coinsRef = useRef<HTMLDivElement>(null);
@@ -62,15 +63,23 @@ const Hero = () => {
                 technology.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <Button className="bg-[#22BBF9] text-[#080D24] hover:bg-[#22BBF9]/90 text-lg py-6 px-8 rounded">
-                  Get Started
-                </Button>
-                <Button
-            
-                  className="border-[#22BBF9] text-[#22BBF9] hover:bg-[#22BBF9]/10 text-lg py-6 px-8 bg-[#ffffff] rounded"
-                >
-                  Learn More
-                </Button>
+                <div className="wrapper text-black">
+                  <button className="button3D">
+                    <span>Get Started</span>
+                  </button>
+                </div>
+                <div className="wrapper">
+                  <button
+                    className="button3D"
+                    style={{
+                      background: "transparent",
+                      color: "#22BBF9",
+                      border: "1px solid #22BBF9",
+                    }}
+                  >
+                    <span>Learn More</span>
+                  </button>
+                </div>
               </div>
             </div>
 

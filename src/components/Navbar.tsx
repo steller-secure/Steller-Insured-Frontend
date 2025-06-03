@@ -56,64 +56,83 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#080D24]/90 backdrop-blur-lg border-b border-[#22BBF9]/20">
-      <div className="container mx-auto px-4 md:px-6 py-4">
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-6xl">
+      <div className="bg-[#1a2332]/95 backdrop-blur-xl border border-[#22BBF9]/20 rounded-full px-6 py-3 shadow-lg shadow-[#22BBF9]/5">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-white">
+              <span className="text-xl font-bold text-white">
                 Stark<span className="text-[#22BBF9]">Insured</span>
               </span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-1 bg-[#0f1419]/50 rounded-full px-4 py-2 border border-[#22BBF9]/10">
             <Link
               href="/"
-              className="text-white hover:text-[#22BBF9] transition-colors"
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                pathname === "/"
+                  ? "bg-[#22BBF9]/20 text-[#22BBF9] border border-[#22BBF9]/30"
+                  : "text-white/80 hover:text-white hover:bg-white/5"
+              }`}
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="text-white hover:text-[#22BBF9] transition-colors"
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                pathname === "/about"
+                  ? "bg-[#22BBF9]/20 text-[#22BBF9] border border-[#22BBF9]/30"
+                  : "text-white/80 hover:text-white hover:bg-white/5"
+              }`}
             >
               About
             </Link>
             <Link
               href="/features"
-              className="text-white hover:text-[#22BBF9] transition-colors"
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                pathname === "/features"
+                  ? "bg-[#22BBF9]/20 text-[#22BBF9] border border-[#22BBF9]/30"
+                  : "text-white/80 hover:text-white hover:bg-white/5"
+              }`}
             >
               Features
             </Link>
             <Link
               href="/insurance"
-              className="text-white hover:text-[#22BBF9] transition-colors"
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                pathname === "/insurance"
+                  ? "bg-[#22BBF9]/20 text-[#22BBF9] border border-[#22BBF9]/30"
+                  : "text-white/80 hover:text-white hover:bg-white/5"
+              }`}
             >
               Insurance
             </Link>
             <Link
               href="/contact"
-              className="text-white hover:text-[#22BBF9] transition-colors"
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                pathname === "/contact"
+                  ? "bg-[#22BBF9]/20 text-[#22BBF9] border border-[#22BBF9]/30"
+                  : "text-white/80 hover:text-white hover:bg-white/5"
+              }`}
             >
               Contact
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3">
             {isSignedIn ? (
               <>
                 <Link
                   href="/dashboard"
-                  className="text-[#22BBF9] hover:text-[#22BBF9]/80 transition-colors"
+                  className="text-[#22BBF9] hover:text-[#22BBF9]/80 transition-colors px-4 py-2 rounded-full hover:bg-[#22BBF9]/10 text-sm font-medium"
                 >
                   Dashboard
                 </Link>
                 <Button
                   onClick={handleSignOut}
-                  
-                  className="border-[#22BBF9] text-[#22BBF9] hover:bg-[#22BBF9]/10"
+                  className="bg-transparent border border-[#22BBF9]/50 text-[#22BBF9] hover:bg-[#22BBF9]/10 rounded-full px-6 py-2 text-sm font-medium transition-all duration-200"
                 >
                   Sign Out
                 </Button>
@@ -122,14 +141,13 @@ const Navbar = () => {
               <>
                 <Button
                   onClick={handleSignIn}
-                 
-                  className="border-lightBlue text-lightBlue hover:bg-lightBlue/1 bg-[#ffffff] rounded"
+                  className="bg-transparent border border-[#22BBF9]/50 text-[#22BBF9] hover:bg-[#22BBF9]/10 rounded-full px-6 py-2 text-sm font-medium transition-all duration-200"
                 >
                   Sign In
                 </Button>
                 <Button
                   onClick={handleSignUp}
-                  className="bg-[#22BBF9] text-[#080D24] hover:bg-[#22BBF9]/90 rounded"
+                  className="bg-[#22BBF9] text-white hover:bg-[#22BBF9]/90 rounded-full px-6 py-2 text-sm font-medium transition-all duration-200 shadow-lg shadow-[#22BBF9]/20"
                 >
                   Sign Up
                 </Button>
@@ -141,12 +159,12 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-white p-2 focus:outline-none"
+              className="text-white p-2 focus:outline-none hover:bg-white/10 rounded-full transition-colors"
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-5 w-5" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-5 w-5" />
               )}
             </button>
           </div>
@@ -154,42 +172,62 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-fade-in">
-            <div className="flex flex-col space-y-4">
+          <div className="md:hidden mt-4 pb-4 animate-fade-in border-t border-[#22BBF9]/20 pt-4">
+            <div className="flex flex-col space-y-2">
               <Link
                 href="/"
-                className="text-white hover:text-[#22BBF9] transition-colors py-2"
+                className={`px-4 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
+                  pathname === "/"
+                    ? "bg-[#22BBF9]/20 text-[#22BBF9] border border-[#22BBF9]/30"
+                    : "text-white/80 hover:text-white hover:bg-white/5"
+                }`}
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="text-white hover:text-[#22BBF9] transition-colors py-2"
+                className={`px-4 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
+                  pathname === "/about"
+                    ? "bg-[#22BBF9]/20 text-[#22BBF9] border border-[#22BBF9]/30"
+                    : "text-white/80 hover:text-white hover:bg-white/5"
+                }`}
               >
                 About
               </Link>
               <Link
                 href="/features"
-                className="text-white hover:text-[#22BBF9] transition-colors py-2"
+                className={`px-4 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
+                  pathname === "/features"
+                    ? "bg-[#22BBF9]/20 text-[#22BBF9] border border-[#22BBF9]/30"
+                    : "text-white/80 hover:text-white hover:bg-white/5"
+                }`}
               >
                 Features
               </Link>
               <Link
                 href="/insurance"
-                className="text-white hover:text-[#22BBF9] transition-colors py-2"
+                className={`px-4 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
+                  pathname === "/insurance"
+                    ? "bg-[#22BBF9]/20 text-[#22BBF9] border border-[#22BBF9]/30"
+                    : "text-white/80 hover:text-white hover:bg-white/5"
+                }`}
               >
                 Insurance
               </Link>
               <Link
                 href="/contact"
-                className="text-white hover:text-[#22BBF9] transition-colors py-2"
+                className={`px-4 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
+                  pathname === "/contact"
+                    ? "bg-[#22BBF9]/20 text-[#22BBF9] border border-[#22BBF9]/30"
+                    : "text-white/80 hover:text-white hover:bg-white/5"
+                }`}
               >
                 Contact
               </Link>
               {isSignedIn && (
                 <Link
                   href="/dashboard"
-                  className="text-[#22BBF9] hover:text-[#22BBF9]/80 transition-colors py-2"
+                  className="text-[#22BBF9] hover:text-[#22BBF9]/80 transition-colors px-4 py-3 rounded-full hover:bg-[#22BBF9]/10 text-sm font-medium"
                 >
                   Dashboard
                 </Link>
@@ -198,8 +236,7 @@ const Navbar = () => {
                 {isSignedIn ? (
                   <Button
                     onClick={handleSignOut}
-                   
-                    className="border-[#22BBF9] text-[#22BBF9] hover:bg-[#22BBF9]/10 w-full"
+                    className="bg-transparent border border-[#22BBF9]/50 text-[#22BBF9] hover:bg-[#22BBF9]/10 rounded-full w-full py-3 text-sm font-medium"
                   >
                     Sign Out
                   </Button>
@@ -207,14 +244,13 @@ const Navbar = () => {
                   <>
                     <Button
                       onClick={handleSignIn}
-                     
-                      className="border-[#22BBF9] text-[#22BBF9] hover:bg-[#22BBF9]/10 w-full"
+                      className="bg-transparent border border-[#22BBF9]/50 text-[#22BBF9] hover:bg-[#22BBF9]/10 rounded-full w-full py-3 text-sm font-medium"
                     >
                       Sign In
                     </Button>
                     <Button
                       onClick={handleSignUp}
-                      className="bg-[#22BBF9] text-[#080D24] hover:bg-[#22BBF9]/90 w-full"
+                      className="bg-[#22BBF9] text-white hover:bg-[#22BBF9]/90 rounded-full w-full py-3 text-sm font-medium shadow-lg shadow-[#22BBF9]/20"
                     >
                       Sign Up
                     </Button>
@@ -223,7 +259,7 @@ const Navbar = () => {
                 {!isSignedIn && (
                   <Button
                     onClick={handleGetStarted}
-                    className="bg-[#22BBF9] text-[#080D24] hover:bg-[#22BBF9]/90 w-full"
+                    className="bg-[#22BBF9] text-white hover:bg-[#22BBF9]/90 rounded-full w-full py-3 text-sm font-medium shadow-lg shadow-[#22BBF9]/20"
                   >
                     Get Started
                   </Button>

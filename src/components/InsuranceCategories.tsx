@@ -4,6 +4,7 @@ import { Heart, Car, Home, Globe, Database } from 'lucide-react';
 import { Button } from './ui/button';
 
 
+
 const InsuranceCategories = () => {
     const categories = [
       {
