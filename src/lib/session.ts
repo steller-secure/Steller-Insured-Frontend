@@ -22,7 +22,11 @@ export async function encrypt(payload: JWTPayload | undefined) {
 }
 export async function decrypt(session: string | Uint8Array | undefined) {
     try {
-        const { payload } = await jwtVerify(session as string, new TextEncoder().encode(key),
+        if (!session || typeof session !== 'string') {
+            throw new Error('Invalid session token');
+          }
+
+        const { payload } = await jwtVerify(session, new TextEncoder().encode(key),
             {
                 algorithms: ["HS256"]
             });
@@ -54,9 +58,8 @@ export async function verifySession() {
     return {userId: session.userId}
 }
 export async function deleteSession() {
-    const cookie =  (await cookies()).delete(_cookie.name);
+    (await cookies()).delete(_cookie.name);
     redirect("/sign-in")
-
 }
 
 
