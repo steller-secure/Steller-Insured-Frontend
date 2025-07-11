@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 
 import { navLinks } from "@/src/data/dashboard/navlinks";
