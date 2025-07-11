@@ -1,15 +1,14 @@
+"use client"
 
 import SideNav from "@/src/components/dashboard/SideNav";
 import ConnectWalletButton from "@/src/components/dashboard/ConnectWalletButton";
 import MobileNav from "@/src/components/dashboard/MobileNav";
-import { verifySession } from "@/src/lib/session";
 
-export default async function DashboardLayout({
+export default function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await verifySession()
   
 
   return (
