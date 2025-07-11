@@ -3,7 +3,8 @@ import { cookies } from "next/headers";
 import { decrypt } from "@/src/lib/session";
 
 export default async function middleware(request: NextRequest) {
-    const protectedRoutes = ["/dashboard"]
+     // uncoment this session and remove this line after sign-up and sign-in logic is implemented
+    // const protectedRoutes = ["/dashboard"]
     const publicRoutes = ['/sign-in', '/sign-up', '/']
 
     const currentPath = request.nextUrl.pathname;
