@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
 import "@/src/styles/button.css";
 
