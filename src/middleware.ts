@@ -7,7 +7,8 @@ export default async function middleware(request: NextRequest) {
     const publicRoutes = ['/sign-in', '/sign-up', '/']
 
     const currentPath = request.nextUrl.pathname;
-    const isProtectedRoute = protectedRoutes.includes(currentPath);
+     // uncoment this session and remove this line after sign-up and sign-in logic is implemented
+    // const isProtectedRoute = protectedRoutes.includes(currentPath);
     const isPublicRoute = publicRoutes.includes(currentPath)
 
     // On /dashboard access without auth, redirect to /sign-in
