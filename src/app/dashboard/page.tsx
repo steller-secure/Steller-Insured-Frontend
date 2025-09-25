@@ -5,8 +5,6 @@ import PoliciesCard from "@/src/components/dashboard/PoliciesCard";
 import RiskOfAssessmentsCard from "@/src/components/dashboard/RiskAssessmentsCards";
 
 export default function DashboardPage() {
-
-
   return (
     <div className="space-y-6 text-white p-1 md:p-1 w-full bg-darkBlue">
       <StatsCards />
