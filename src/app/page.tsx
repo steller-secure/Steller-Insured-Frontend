@@ -3,9 +3,9 @@ import Navbar from "@/src/components/Navbar";
 import Features from "../components/Features";
 import HowItWorks from "../components/HowItWorks";
 import InsuranceCategories from "../components/InsuranceCategories";
-import { CtaSection } from "../components/CtaSection"
-import CallToAction from '../components/cta';
-import Footer from '../components/footer';;
+import { CtaSection } from "../components/CtaSection";
+import CallToAction from "../components/cta";
+import Footer from "../components/footer";
 // import "../components/CtaSection.css";
 import "../styles/CtaSection.css";
 
